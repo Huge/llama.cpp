@@ -33,6 +33,8 @@
 /.vs/
 /.vscode/
 /nppBackup
+*.patch
+*.diff
 
 
 # Coverage
