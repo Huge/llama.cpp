@@ -1,0 +1,16 @@
+torch=2.2.2
+mps_built=True
+mps_available=True
+
+model=Qwen/Qwen3-0.6B
+device=mps dtype=torch.float16
+load_s=6.05
+prompt_tokens=705 pp_tok_s_avg=272.28 pp_tok_s_runs=[273.47, 271.3, 272.07]
+gen_tokens=64 tg_tok_s_avg=1.11 tg_tok_s_runs=[1.11, 1.11, 1.11]
+
+model=Qwen/Qwen3-1.7B
+device=mps dtype=torch.float16
+load_s=4.92
+prompt_tokens=705 pp_tok_s_avg=162.30 pp_tok_s_runs=[162.95, 162.04, 161.89]
+gen_tokens=64 tg_tok_s_avg=0.98 tg_tok_s_runs=[1.0, 0.98, 0.98]
+
