@@ -4,6 +4,11 @@
 MODEL_REPO="bartowski/zai-org_GLM-4.7-Flash-GGUF"
 MODEL_FILE="zai-org_GLM-4.7-Flash-Q4_K_M.gguf"
 
+# Bench findings so far (prompt processing pp1024 on BLAS/Accelerate, 15 threads):
+# best seen: n_batch=128, n_ubatch=128
+N_BATCH=128
+N_UBATCH=128
+
 # Kill any existing llama-server
 pkill -f "llama-server" 2>/dev/null
 sleep 1
@@ -14,6 +19,8 @@ echo "Starting llama-server..."
   --hf-repo "$MODEL_REPO" \
   --hf-file "$MODEL_FILE" \
   -ngl 0 \
+  -b $N_BATCH \
+  -ub $N_UBATCH \
   -c 8192 \
   --threads 15 \
   --host 127.0.0.1 \
